@@ -5,7 +5,7 @@ const variantCSS = {
     border: 1px solid black;
   `,
   secondary: css`
-    border: 3px dotted purple;
+    background-color: beige;
   `
 };
 
@@ -28,42 +28,29 @@ const sizeCSS = {
         font-size: 20px;
     `,
     small : css`
-        width : 200px;
-        padding : 20px;
+        width : 150px;
+        padding : 10px;
         font-size: 15px;
     `,
     large : css`
-        width : 500px;
-        padding : 30px;
+        width : 300px;
+        padding : 20px;
         font-size: 30px;
     `
 };
 
-const statusCSS = {
-  default: css`
-      color: ${({ theme }) => theme.color.fontColor[300]};
-  `,
-  success: css`
-    color: ${({ theme }) => theme.color.success};
-  `,
-  error: css`
-    color: ${({ theme }) => theme.color.error};
-  `,
-};
-
 export const Select = styled.select`
-  width: 100%;
+  width: 300px;
   background: none;
   outline: none;
-  color: ${({ theme }) => theme.color.gray[200]};
   font-size: ${({ theme }) => theme.fontSize.base};
   border: 2px solid ${({ theme }) => theme.color.gray[100]};
   ${({ variant }) => variantCSS[variant]}
   ${({ shape }) => shapeCSS[shape]}
   ${({ size }) => sizeCSS[size]}
-    ${({ status }) => statusCSS[status]}
-    :focus {
-    border: 2px solid ${({ theme }) => theme.color.primary[300]};
-  }
   cursor: pointer;
 `;
+
+export const Option = styled.option`
+
+`
